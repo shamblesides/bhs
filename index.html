@@ -7,7 +7,7 @@
 <body>
   <div id="app">
     <input v-model="bhs"/>BH/s
-    <div class="result" v-for="n of [8,9,10,11,12]">
+    <div class="result" v-for="n of [6,7,8,9,10,11,12]">
       <strong>{{n}}-char password:</strong> {{time(n).toFixed(2)}} days
     </div>
   </div>
