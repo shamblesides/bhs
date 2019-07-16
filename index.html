@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GH/s</title>
+  <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+  <div id="app">
+    <input v-model="bhs"/>BH/s
+    <br>
+    <div class="result" v-for="n of [8,9,10,11,12]">
+      <strong>{{n}}-char password:</strong> {{time(n).toFixed(2)}} days
+    </div>
+  </div>
+
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        bhs: 3.2,
+        message: 'Hello Vue!'
+      },
+      methods: {
+        time(chars) {
+          return (62**chars) / (this.bhs*10**9 * 60 * 60 * 24);
+        }
+      }
+    })
+  </script>
+</body>
+</html>
